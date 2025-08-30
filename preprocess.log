@@ -1,0 +1,37 @@
+2025-08-27 19:08:49,000 - INFO - [ULTRA-AI] HF Data Preprocessor
+2025-08-27 19:08:49,007 - INFO - Manifest: data\training_manifest.json
+2025-08-27 19:08:49,007 - INFO - Output: data\processed
+2025-08-27 19:08:49,007 - INFO - Tokenizer: microsoft/DialoGPT-large
+2025-08-27 19:08:49,007 - INFO - [START] Processing datasets from data
+2025-08-27 19:08:52,141 - INFO - [MODALITY] text
+2025-08-27 19:08:52,150 - INFO - [DATASET] imdb - IMDB reviews échantillon
+2025-08-27 19:08:52,175 - ERROR - [ERROR] Processing imdb: Extra data: line 2 column 1 (char 1670)
+2025-08-27 19:08:52,175 - ERROR - [FAILED] imdb: Extra data: line 2 column 1 (char 1670)
+2025-08-27 19:08:52,177 - INFO - [DATASET] wikitext - WikiText-103 échantillon
+2025-08-27 19:08:52,179 - ERROR - [ERROR] Processing wikitext: Extra data: line 2 column 1 (char 12)
+2025-08-27 19:08:52,179 - ERROR - [FAILED] wikitext: Extra data: line 2 column 1 (char 12)
+2025-08-27 19:08:52,179 - INFO - [MANIFEST] Training manifest: data\processed\training_manifest.json
+2025-08-27 19:08:52,179 - INFO - [SUMMARY] Total processed samples: 0
+2025-08-27 19:08:52,203 - ERROR - [ERROR] Data processing failed
+2025-08-27 19:11:21,629 - INFO - [ULTRA-AI] HF Data Preprocessor
+2025-08-27 19:11:21,630 - INFO - Manifest: data\training_manifest.json
+2025-08-27 19:11:21,630 - INFO - Output: data\processed
+2025-08-27 19:11:21,630 - INFO - Tokenizer: microsoft/DialoGPT-large
+2025-08-27 19:11:21,631 - INFO - [START] Processing datasets from data
+2025-08-27 19:11:22,213 - INFO - [MODALITY] text
+2025-08-27 19:11:22,214 - INFO - [DATASET] imdb - IMDB reviews échantillon
+2025-08-27 19:11:22,237 - INFO - [PROCESS] imdb - 2000 samples
+2025-08-27 19:11:24,955 - INFO - [SAVED] Chunk 0: 1000 samples -> data\processed\text\imdb\imdb_chunk_0.pt
+2025-08-27 19:11:25,219 - INFO - [SAVED] Chunk 1: 1000 samples -> data\processed\text\imdb\imdb_chunk_1.pt
+2025-08-27 19:11:25,226 - INFO - [SUCCESS] imdb: 2000 processed, 0 skipped
+2025-08-27 19:11:25,242 - INFO - [DATASET] wikitext - WikiText-103 échantillon
+2025-08-27 19:11:25,251 - INFO - [PROCESS] wikitext - 1000 samples
+2025-08-27 19:11:25,659 - INFO - [SAVED] Chunk 0: 465 samples -> data\processed\text\wikitext\wikitext_chunk_0.pt
+2025-08-27 19:11:25,663 - INFO - [SUCCESS] wikitext: 465 processed, 535 skipped
+2025-08-27 19:11:25,668 - INFO - [MANIFEST] Training manifest: data\processed\training_manifest.json
+2025-08-27 19:11:25,669 - INFO - [SUMMARY] Total processed samples: 2465
+2025-08-27 19:11:25,682 - INFO - [SUCCESS] Data processing completed!
+2025-08-27 19:11:25,682 - INFO - [SPLITS] Creating data splits (train: 0.8, val: 0.1)
+2025-08-27 19:11:25,684 - INFO - [SPLITS] imdb: train=1, val=0, test=1
+2025-08-27 19:11:25,684 - INFO - [SPLITS] wikitext: train=1, val=0, test=0
+2025-08-27 19:11:25,691 - INFO - [SPLITS] Info saved: data\processed\data_splits.json

@@ -1,0 +1,20 @@
+2025-08-27 19:05:17,048 - INFO - [ULTRA-AI] Hugging Face Dataset Downloader
+2025-08-27 19:05:17,049 - INFO - Preset: test
+2025-08-27 19:05:17,049 - INFO - Output: data
+2025-08-27 19:05:17,049 - INFO - [PRESET] test - Datasets test rapides pour validation
+2025-08-27 19:05:17,049 - INFO - [DOWNLOAD] wikitext - WikiText-103 échantillon
+2025-08-27 19:05:17,051 - INFO - [HF_NAME] wikitext
+2025-08-27 19:05:17,051 - INFO - [SPLIT] train[:1000]
+2025-08-27 19:05:31,192 - INFO - [SUCCESS] Downloaded 1000 samples
+2025-08-27 19:05:31,229 - INFO - [SAVED] data\text\wikitext\data.json
+2025-08-27 19:05:31,232 - INFO - [METADATA] data\text\wikitext\metadata.json
+2025-08-27 19:05:31,240 - INFO - [DOWNLOAD] imdb - IMDB reviews échantillon
+2025-08-27 19:05:31,240 - INFO - [HF_NAME] imdb
+2025-08-27 19:05:31,241 - INFO - [SPLIT] train[:2000]
+2025-08-27 19:05:43,677 - INFO - [SUCCESS] Downloaded 2000 samples
+2025-08-27 19:05:43,726 - INFO - [SAVED] data\text\imdb\data.json
+2025-08-27 19:05:43,728 - INFO - [METADATA] data\text\imdb\metadata.json
+2025-08-27 19:05:43,730 - INFO - [RESULT] 2/2 datasets downloaded
+2025-08-27 19:05:43,730 - INFO - [SUCCESS] Download completed!
+2025-08-27 19:05:43,762 - INFO - [MANIFEST] Created: data\training_manifest.json
+2025-08-27 19:05:43,763 - INFO - [SUMMARY] 2 datasets in 1 modalities

@@ -1,0 +1,22 @@
+{
+  "text": {
+    "imdb": {
+      "total_chunks": 2,
+      "train_chunks": [
+        "data\\processed\\text\\imdb\\imdb_chunk_0.pt"
+      ],
+      "val_chunks": [],
+      "test_chunks": [
+        "data\\processed\\text\\imdb\\imdb_chunk_1.pt"
+      ]
+    },
+    "wikitext": {
+      "total_chunks": 1,
+      "train_chunks": [
+        "data\\processed\\text\\wikitext\\wikitext_chunk_0.pt"
+      ],
+      "val_chunks": [],
+      "test_chunks": []
+    }
+  }
+}

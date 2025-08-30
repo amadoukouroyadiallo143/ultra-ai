@@ -1,0 +1,11 @@
+{
+  "dataset_name": "wikitext",
+  "total_samples": 465,
+  "skipped_samples": 535,
+  "chunk_files": [
+    "data\\processed\\text\\wikitext\\wikitext_chunk_0.pt"
+  ],
+  "max_length": 512,
+  "tokenizer": "microsoft/DialoGPT-large",
+  "avg_token_length": 127.76774193548387
+}

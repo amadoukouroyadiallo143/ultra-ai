@@ -1,0 +1,12 @@
+{
+  "dataset_name": "imdb",
+  "total_samples": 2000,
+  "skipped_samples": 0,
+  "chunk_files": [
+    "data\\processed\\text\\imdb\\imdb_chunk_0.pt",
+    "data\\processed\\text\\imdb\\imdb_chunk_1.pt"
+  ],
+  "max_length": 512,
+  "tokenizer": "microsoft/DialoGPT-large",
+  "avg_token_length": 260.6035
+}

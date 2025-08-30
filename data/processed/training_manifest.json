@@ -1,0 +1,33 @@
+{
+  "processed_data_root": "data\\processed",
+  "tokenizer": "microsoft/DialoGPT-large",
+  "total_samples": 2465,
+  "datasets": {
+    "text": {
+      "imdb": {
+        "dataset_name": "imdb",
+        "total_samples": 2000,
+        "skipped_samples": 0,
+        "chunk_files": [
+          "data\\processed\\text\\imdb\\imdb_chunk_0.pt",
+          "data\\processed\\text\\imdb\\imdb_chunk_1.pt"
+        ],
+        "max_length": 512,
+        "tokenizer": "microsoft/DialoGPT-large",
+        "avg_token_length": 260.6035
+      },
+      "wikitext": {
+        "dataset_name": "wikitext",
+        "total_samples": 465,
+        "skipped_samples": 535,
+        "chunk_files": [
+          "data\\processed\\text\\wikitext\\wikitext_chunk_0.pt"
+        ],
+        "max_length": 512,
+        "tokenizer": "microsoft/DialoGPT-large",
+        "avg_token_length": 127.76774193548387
+      }
+    }
+  },
+  "processing_date": "0"
+}

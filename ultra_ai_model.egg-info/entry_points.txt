@@ -1,0 +1,3 @@
+[console_scripts]
+ultra-ai-deploy = scripts.deploy:main
+ultra-ai-train = scripts.train:main

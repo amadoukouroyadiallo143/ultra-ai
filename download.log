@@ -1,0 +1,22 @@
+2025-08-27 18:59:03,058 - INFO -    Preset: small
+2025-08-27 18:59:03,058 - INFO -    Destination: data
+2025-08-27 18:59:03,066 - INFO -    Taille: 40GB
+2025-08-27 18:59:03,069 - INFO - T�l�chargement: https://huggingface.co/datasets/openwebtext/resolve/main/openwebtext.tar.xz
+2025-08-27 18:59:03,069 - INFO - Destination: data\archives\openwebtext.tar.xz
+2025-08-27 18:59:03,628 - INFO -    Taille: 18GB
+2025-08-27 18:59:03,628 - INFO - T�l�chargement: http://images.cocodataset.org/zips/train2017.zip
+2025-08-27 18:59:03,628 - INFO - Destination: data\archives\train2017.zip
+2025-08-27 19:01:48,789 - INFO - 🎯 Ultra-AI Dataset Downloader
+2025-08-27 19:01:48,790 - INFO -    Preset: small
+2025-08-27 19:01:48,790 - INFO -    Destination: data
+2025-08-27 19:01:48,795 - INFO - 🚀 Téléchargement preset 'small' (~~60GB)
+2025-08-27 19:01:48,796 - INFO - 📦 Dataset: openwebtext_sample - OpenWebText échantillon
+2025-08-27 19:01:48,796 - INFO -    Taille: 12GB
+2025-08-27 19:01:48,797 - INFO - Téléchargement: https://huggingface.co/datasets/Skylion007/openwebtext/resolve/main/subsets/urlsf_subset00-1_data.xz
+2025-08-27 19:01:48,797 - INFO - Destination: data\archives\urlsf_subset00-1_data.xz
+2025-08-27 19:01:49,199 - ERROR - ❌ Erreur téléchargement https://huggingface.co/datasets/Skylion007/openwebtext/resolve/main/subsets/urlsf_subset00-1_data.xz: 404 Client Error: Not Found for url: https://huggingface.co/datasets/Skylion007/openwebtext/resolve/main/subsets/urlsf_subset00-1_data.xz
+2025-08-27 19:01:49,199 - ERROR - ❌ Échec téléchargement: openwebtext_sample
+2025-08-27 19:01:49,199 - INFO - 📦 Dataset: coco2017_val - Images COCO validation (plus petit)
+2025-08-27 19:01:49,199 - INFO -    Taille: 1GB
+2025-08-27 19:01:49,199 - INFO - Téléchargement: http://images.cocodataset.org/zips/val2017.zip
+2025-08-27 19:01:49,212 - INFO - Destination: data\archives\val2017.zip

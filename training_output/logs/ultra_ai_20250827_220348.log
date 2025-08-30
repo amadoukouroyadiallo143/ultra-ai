@@ -1,0 +1,271 @@
+2025-08-27 22:03:48,127 | ultra_ai | INFO | logger.py:97 | Logging initialized - Level: INFO, File: ultra_ai_20250827_220348.log
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:233 | ============================================================
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:234 | ULTRA-AI POWER TRAINER
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:235 | ============================================================
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:236 | 🏗️ Architecture: ultra-ai-edge
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:237 | 📊 Model Size: 512d, 50432 vocab
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:238 | 🔄 Max Context: 512 tokens
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:239 | ⚡ Device: cpu
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:240 | 🎯 Batch Size: 8 (effective: 64)
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:119 | 🚀 Ultra-AI Power Trainer Initialized!
+2025-08-27 22:03:48,127 | ultra_ai | INFO | train.py:256 | 🏗️ Initializing Ultra-AI Model...
+2025-08-27 22:03:53,469 | ultra_ai | INFO | train.py:266 | 📊 Model Parameters: 101,587,844
+2025-08-27 22:03:53,469 | ultra_ai | INFO | train.py:267 | 💾 Model Memory: 387.5 MB
+2025-08-27 22:03:53,469 | ultra_ai | INFO | train.py:268 | ⚡ Active Parameters: 13,511,183
+2025-08-27 22:03:53,471 | src.utils.memory | INFO | memory.py:164 | Started memory monitoring
+2025-08-27 22:03:53,471 | src.utils.checkpointing | INFO | checkpointing.py:339 | Discovered 0 existing checkpoints
+2025-08-27 22:03:53,472 | src.utils.checkpointing | INFO | checkpointing.py:57 | CheckpointManager initialized: training_output\checkpoints
+2025-08-27 22:03:53,472 | ultra_ai | INFO | train.py:313 | 🔧 Applying model optimizations...
+2025-08-27 22:03:53,472 | ultra_ai | WARNING | train.py:340 | ⚠️ Quantization failed: DynamicQuantizer.__init__() missing 1 required positional argument: 'config'
+2025-08-27 22:03:53,482 | ultra_ai | INFO | train.py:280 | ✅ Model and components initialized!
+2025-08-27 22:03:53,482 | ultra_ai | INFO | train.py:344 | 📚 Creating datasets and data loaders...
+2025-08-27 22:03:53,484 | ultra_ai | INFO | train.py:368 | Using preprocessed data from data/processed/
+2025-08-27 22:03:54,287 | src.training.data_loader | INFO | data_loader.py:57 | Loaded 1000 samples from data\processed\text\imdb\imdb_chunk_0.pt
+2025-08-27 22:03:54,992 | src.training.data_loader | INFO | data_loader.py:57 | Loaded 1000 samples from data\processed\text\imdb\imdb_chunk_1.pt
+2025-08-27 22:03:55,419 | src.training.data_loader | INFO | data_loader.py:57 | Loaded 465 samples from data\processed\text\wikitext\wikitext_chunk_0.pt
+2025-08-27 22:03:55,419 | src.training.data_loader | INFO | data_loader.py:29 | Loaded ProcessedDataset with 2465 samples
+2025-08-27 22:03:55,578 | src.training.data_loader | INFO | data_loader.py:379 | Created 1 sequence buckets
+2025-08-27 22:03:55,578 | ultra_ai | INFO | train.py:394 | ✅ Dataset created: 2,465 samples
+2025-08-27 22:03:55,579 | ultra_ai | INFO | train.py:428 | 🎯 Creating Single GPU Trainer
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:135 | Created 3 parameter groups
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:138 | Group 0: 40,165,888 parameters, lr=1.00e-04, wd=0.01
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:138 | Group 1: 51,981,700 parameters, lr=1.00e-04, wd=0.0
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:138 | Group 2: 9,440,256 parameters, lr=1.00e-04, wd=0.01
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:56 | Using optimizer: AdamW
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:57 | Learning rate: 0.0001
+2025-08-27 22:03:55,579 | src.training.optimizer | INFO | optimizer.py:58 | Weight decay: 0.01
+2025-08-27 22:03:55,579 | src.training.trainer | INFO | trainer.py:101 | Model does not support gradient_checkpointing_enable, skipping
+2025-08-27 22:03:55,588 | src.utils.checkpointing | INFO | checkpointing.py:339 | Discovered 0 existing checkpoints
+2025-08-27 22:03:55,588 | src.utils.checkpointing | INFO | checkpointing.py:57 | CheckpointManager initialized: training_output\checkpoints
+2025-08-27 22:03:55,588 | src.utils.memory | INFO | memory.py:164 | Started memory monitoring
+2025-08-27 22:03:55,588 | src.training.trainer | INFO | trainer.py:123 | Trainer initialized. Device: cpu
+2025-08-27 22:03:55,593 | src.training.trainer | INFO | trainer.py:124 | Model parameters: 101,587,844
+2025-08-27 22:03:55,593 | ultra_ai | INFO | train.py:453 | 🚀 Starting training loop...
+2025-08-27 22:03:55,593 | src.utils.monitoring | INFO | monitoring.py:176 | Started performance monitoring
+2025-08-27 22:03:55,593 | ultra_ai | INFO | train.py:476 | 📚 Epoch 1/1
+2025-08-27 22:04:08,900 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #1: freed 0.0MB GPU, collected 8 objects in 0.42s
+2025-08-27 22:04:08,900 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 95.7%
+2025-08-27 22:04:09,902 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.8%
+2025-08-27 22:04:10,887 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #1: freed 0.0MB GPU, collected 0 objects in 0.29s
+2025-08-27 22:04:10,904 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.8%
+2025-08-27 22:04:11,906 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.6%
+2025-08-27 22:04:12,910 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.8%
+2025-08-27 22:04:14,490 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #2: freed 0.0MB GPU, collected 0 objects in 0.59s
+2025-08-27 22:04:14,490 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:15,491 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:16,320 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #2: freed 0.0MB GPU, collected 0 objects in 0.43s
+2025-08-27 22:04:16,494 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:17,496 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:18,500 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:19,848 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #3: freed 0.0MB GPU, collected 0 objects in 0.36s
+2025-08-27 22:04:19,848 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:20,852 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:21,917 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:04:21,930 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #3: freed 0.0MB GPU, collected 0 objects in 0.59s
+2025-08-27 22:04:22,940 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.6%
+2025-08-27 22:04:23,945 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.8%
+2025-08-27 22:04:25,700 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #4: freed 0.0MB GPU, collected 0 objects in 0.85s
+2025-08-27 22:04:25,700 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.8%
+2025-08-27 22:04:26,706 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:27,363 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #4: freed 0.0MB GPU, collected 0 objects in 0.42s
+2025-08-27 22:04:27,709 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:04:28,748 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:29,764 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:31,306 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #5: freed 0.0MB GPU, collected 0 objects in 0.59s
+2025-08-27 22:04:31,309 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:04:35,553 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #5: freed 0.0MB GPU, collected 0 objects in 3.17s
+2025-08-27 22:04:35,558 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:39,547 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #6: freed 0.0MB GPU, collected 0 objects in 3.23s
+2025-08-27 22:04:39,551 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:41,551 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #6: freed 0.0MB GPU, collected 0 objects in 0.99s
+2025-08-27 22:04:41,556 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.6%
+2025-08-27 22:04:42,560 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:43,571 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:45,174 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #7: freed 0.0MB GPU, collected 0 objects in 0.60s
+2025-08-27 22:04:45,175 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.7%
+2025-08-27 22:04:46,181 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:47,351 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #7: freed 0.0MB GPU, collected 0 objects in 0.79s
+2025-08-27 22:04:47,356 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.8%
+2025-08-27 22:04:48,383 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.0%
+2025-08-27 22:04:49,579 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:53,543 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #8: freed 0.0MB GPU, collected 0 objects in 3.36s
+2025-08-27 22:04:54,146 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:04:54,148 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #8: freed 0.0MB GPU, collected 0 objects in 0.60s
+2025-08-27 22:04:55,307 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:56,356 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:57,383 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:04:58,390 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:00,117 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #9: freed 0.0MB GPU, collected 0 objects in 0.96s
+2025-08-27 22:05:00,124 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #9: freed 0.0MB GPU, collected 0 objects in 0.37s
+2025-08-27 22:05:00,124 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.4%
+2025-08-27 22:05:01,149 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:02,156 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:03,160 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:04,166 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:08,653 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #10: freed 0.0MB GPU, collected 0 objects in 2.91s
+2025-08-27 22:05:08,665 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.8%
+2025-08-27 22:05:08,666 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #10: freed 0.0MB GPU, collected 0 objects in 3.53s
+2025-08-27 22:05:09,680 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:10,687 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 95.9%
+2025-08-27 22:05:11,719 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:12,811 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:15,979 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #11: freed 0.0MB GPU, collected 0 objects in 2.30s
+2025-08-27 22:05:15,984 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #11: freed 0.0MB GPU, collected 0 objects in 0.38s
+2025-08-27 22:05:15,992 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.4%
+2025-08-27 22:05:17,058 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:18,082 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:19,099 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.9%
+2025-08-27 22:05:20,106 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.8%
+2025-08-27 22:05:21,964 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #12: freed 0.0MB GPU, collected 0 objects in 0.97s
+2025-08-27 22:05:21,964 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #12: freed 0.0MB GPU, collected 0 objects in 0.31s
+2025-08-27 22:05:21,964 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 95.3%
+2025-08-27 22:05:22,968 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 93.9%
+2025-08-27 22:05:23,972 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 95.8%
+2025-08-27 22:05:24,974 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 95.7%
+2025-08-27 22:05:25,976 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 94.4%
+2025-08-27 22:05:28,138 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #13: freed 0.0MB GPU, collected 0 objects in 1.17s
+2025-08-27 22:05:28,139 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #13: freed 0.0MB GPU, collected 0 objects in 0.69s
+2025-08-27 22:05:28,139 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.5%
+2025-08-27 22:05:29,142 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.7%
+2025-08-27 22:05:30,146 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:31,176 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:32,186 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:34,220 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:34,221 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #14: freed 0.0MB GPU, collected 0 objects in 1.08s
+2025-08-27 22:05:34,221 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #14: freed 0.0MB GPU, collected 0 objects in 0.37s
+2025-08-27 22:05:35,349 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:36,862 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:37,953 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:38,959 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:42,681 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #15: freed 0.0MB GPU, collected 0 objects in 3.43s
+2025-08-27 22:05:42,683 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #15: freed 0.0MB GPU, collected 0 objects in 3.44s
+2025-08-27 22:05:42,685 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:43,698 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:05:44,806 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:45,824 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:46,860 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:50,314 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #16: freed 0.0MB GPU, collected 0 objects in 2.61s
+2025-08-27 22:05:50,795 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #16: freed 0.0MB GPU, collected 0 objects in 0.48s
+2025-08-27 22:05:50,796 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.4%
+2025-08-27 22:05:51,799 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.2%
+2025-08-27 22:05:52,802 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:53,804 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:54,806 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:05:57,270 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.6%
+2025-08-27 22:05:57,291 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #17: freed 0.0MB GPU, collected 0 objects in 0.92s
+2025-08-27 22:05:57,293 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #17: freed 0.0MB GPU, collected 0 objects in 1.49s
+2025-08-27 22:05:58,309 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.6%
+2025-08-27 22:05:59,320 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.1%
+2025-08-27 22:06:00,324 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.4%
+2025-08-27 22:06:01,328 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.4%
+2025-08-27 22:06:03,167 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #18: freed 0.0MB GPU, collected 0 objects in 0.83s
+2025-08-27 22:06:03,168 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:06:03,470 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #18: freed 0.0MB GPU, collected 0 objects in 1.13s
+2025-08-27 22:06:04,603 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:05,609 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:06:06,633 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:07,855 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:15,834 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #19: freed 0.0MB GPU, collected 0 objects in 2.62s
+2025-08-27 22:06:15,840 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.7%
+2025-08-27 22:06:15,840 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #19: freed 0.0MB GPU, collected 0 objects in 7.24s
+2025-08-27 22:06:16,852 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.8%
+2025-08-27 22:06:17,866 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:19,256 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:20,288 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:21,749 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #20: freed 0.0MB GPU, collected 0 objects in 0.27s
+2025-08-27 22:06:21,752 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.9%
+2025-08-27 22:06:21,745 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #20: freed 0.0MB GPU, collected 0 objects in 0.88s
+2025-08-27 22:06:22,756 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.3%
+2025-08-27 22:06:23,770 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.9%
+2025-08-27 22:06:24,777 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.5%
+2025-08-27 22:06:25,795 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.7%
+2025-08-27 22:06:28,606 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #21: freed 0.0MB GPU, collected 0 objects in 1.84s
+2025-08-27 22:06:28,982 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #21: freed 0.0MB GPU, collected 0 objects in 0.37s
+2025-08-27 22:06:28,998 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:30,004 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.5%
+2025-08-27 22:06:31,010 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.6%
+2025-08-27 22:06:32,060 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:33,225 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:34,727 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #22: freed 0.0MB GPU, collected 0 objects in 0.72s
+2025-08-27 22:06:34,768 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.8%
+2025-08-27 22:06:35,085 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #22: freed 0.0MB GPU, collected 0 objects in 0.32s
+2025-08-27 22:06:36,096 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.2%
+2025-08-27 22:06:37,099 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.1%
+2025-08-27 22:06:38,101 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.5%
+2025-08-27 22:06:39,104 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.8%
+2025-08-27 22:06:41,054 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #23: freed 0.0MB GPU, collected 0 objects in 0.96s
+2025-08-27 22:06:41,054 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #23: freed 0.0MB GPU, collected 0 objects in 0.61s
+2025-08-27 22:06:41,054 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:42,057 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:06:43,063 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.3%
+2025-08-27 22:06:44,067 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.8%
+2025-08-27 22:06:45,072 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.7%
+2025-08-27 22:06:46,931 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #24: freed 0.0MB GPU, collected 0 objects in 0.30s
+2025-08-27 22:06:46,933 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #24: freed 0.0MB GPU, collected 0 objects in 0.88s
+2025-08-27 22:06:46,934 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.1%
+2025-08-27 22:06:47,937 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 94.8%
+2025-08-27 22:06:48,938 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.9%
+2025-08-27 22:06:49,949 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.9%
+2025-08-27 22:06:50,951 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.9%
+2025-08-27 22:06:53,749 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #25: freed 0.0MB GPU, collected 0 objects in 1.79s
+2025-08-27 22:06:54,095 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.8%
+2025-08-27 22:06:54,149 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #25: freed 0.0MB GPU, collected 0 objects in 0.39s
+2025-08-27 22:06:55,163 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.9%
+2025-08-27 22:06:56,170 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.7%
+2025-08-27 22:06:57,175 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.9%
+2025-08-27 22:06:58,181 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.8%
+2025-08-27 22:07:01,535 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.6%
+2025-08-27 22:07:01,104 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #26: freed 0.0MB GPU, collected 0 objects in 1.94s
+2025-08-27 22:07:01,561 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #26: freed 0.0MB GPU, collected 0 objects in 0.44s
+2025-08-27 22:07:02,567 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.5%
+2025-08-27 22:07:03,585 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.3%
+2025-08-27 22:07:04,589 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.6%
+2025-08-27 22:07:05,615 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.5%
+2025-08-27 22:07:07,767 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.3%
+2025-08-27 22:07:07,768 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #27: freed 0.0MB GPU, collected 0 objects in 1.20s
+2025-08-27 22:07:07,770 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #27: freed 0.0MB GPU, collected 0 objects in 0.33s
+2025-08-27 22:07:08,772 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.6%
+2025-08-27 22:07:09,776 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.3%
+2025-08-27 22:07:10,778 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:07:11,805 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.7%
+2025-08-27 22:07:15,986 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #28: freed 0.0MB GPU, collected 0 objects in 3.05s
+2025-08-27 22:07:17,590 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #28: freed 0.0MB GPU, collected 0 objects in 1.57s
+2025-08-27 22:07:17,590 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.6%
+2025-08-27 22:07:19,647 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.8%
+2025-08-27 22:07:20,682 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.8%
+2025-08-27 22:07:21,684 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.7%
+2025-08-27 22:07:24,023 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #29: freed 0.0MB GPU, collected 0 objects in 1.43s
+2025-08-27 22:07:24,031 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.0%
+2025-08-27 22:07:24,031 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #29: freed 0.0MB GPU, collected 0 objects in 0.31s
+2025-08-27 22:07:25,042 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.6%
+2025-08-27 22:07:26,045 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.3%
+2025-08-27 22:07:27,047 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:07:28,067 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.9%
+2025-08-27 22:07:30,135 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #30: freed 0.0MB GPU, collected 0 objects in 1.09s
+2025-08-27 22:07:30,136 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #30: freed 0.0MB GPU, collected 0 objects in 0.31s
+2025-08-27 22:07:30,136 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 98.4%
+2025-08-27 22:07:31,186 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:07:32,294 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:07:33,368 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:07:34,375 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 100.0%
+2025-08-27 22:07:36,443 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #31: freed 0.0MB GPU, collected 0 objects in 0.38s
+2025-08-27 22:07:36,495 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #31: freed 0.0MB GPU, collected 0 objects in 1.22s
+2025-08-27 22:07:36,495 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.2%
+2025-08-27 22:07:37,503 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.4%
+2025-08-27 22:07:38,505 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.8%
+2025-08-27 22:07:39,512 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.0%
+2025-08-27 22:07:40,521 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 99.3%
+2025-08-27 22:07:42,471 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 97.9%
+2025-08-27 22:07:42,471 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #32: freed 0.0MB GPU, collected 0 objects in 0.97s
+2025-08-27 22:07:42,471 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #32: freed 0.0MB GPU, collected 0 objects in 0.27s
+2025-08-27 22:07:43,483 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 96.6%
+2025-08-27 22:07:44,485 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 95.8%
+2025-08-27 22:07:45,487 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 94.8%
+2025-08-27 22:07:46,488 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 93.9%
+2025-08-27 22:07:48,065 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #33: freed 0.0MB GPU, collected 0 objects in 0.58s
+2025-08-27 22:07:48,065 | src.utils.memory | INFO | memory.py:78 | Memory cleanup #33: freed 0.0MB GPU, collected 0 objects in 0.29s
+2025-08-27 22:07:48,065 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 92.7%
+2025-08-27 22:07:49,067 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 91.6%
+2025-08-27 22:07:50,070 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 90.8%
+2025-08-27 22:07:51,071 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 90.2%
+2025-08-27 22:07:52,073 | src.utils.monitoring | WARNING | monitoring.py:293 | High memory usage: 90.1%

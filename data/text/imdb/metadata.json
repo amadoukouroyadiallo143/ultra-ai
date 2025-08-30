@@ -1,0 +1,10 @@
+{
+  "dataset_name": "imdb",
+  "hf_name": "imdb",
+  "hf_config": null,
+  "modality": "text",
+  "split": "train[:2000]",
+  "num_samples": 2000,
+  "description": "IMDB reviews échantillon",
+  "features": "{'text': Value(dtype='string', id=None), 'label': ClassLabel(names=['neg', 'pos'], id=None)}"
+}

@@ -1,0 +1,300 @@
+# Stage 3: Entraînement Complet
+# Tous les composants activés avec optimisations finales
+
+# Model Configuration - Full Architecture
+model_name: "ultra-ai-stage3"
+model_variant: "ultra-edge-full"
+d_model: 512
+vocab_size: 50432
+max_seq_length: 100000
+
+# Architecture - Full Ultra-AI
+mamba_ratio: 0.70    # Architecture finale
+attention_ratio: 0.20 
+moe_ratio: 0.08
+multimodal_ratio: 0.02
+
+# Mamba-2 Configuration (Optimized)
+mamba_layers: 12
+mamba_d_state: 128
+mamba_d_conv: 4
+mamba_expand: 2
+mamba_dt_rank: "auto"
+
+# Attention Configuration (Full)
+attention_layers: 2
+attention_heads: 16
+attention_type: "linear"
+linear_attention_threshold: 8192
+
+# MoE Configuration (Complete)
+moe_layers: 4
+num_experts: 8
+moe_top_k: 2
+expert_capacity_factor: 1.25
+moe_balance_loss_weight: 0.02  # Légèrement augmenté
+load_balancing_strategy: "sinkhorn"
+expert_dropout: 0.1
+
+# Multimodal Configuration (Full)
+modalities: ["text", "image", "audio", "video"]
+image_size: 224
+audio_sample_rate: 16000
+video_frames: 8
+max_image_tokens: 512  # Augmenté
+max_audio_tokens: 1024
+max_video_tokens: 256
+
+# Training Configuration (Fine-tuning)
+resume_from_checkpoint: "./checkpoints/stage2/best_model.pt"
+freeze_backbone: false
+freeze_embeddings: false  # Allow full fine-tuning
+unfreeze_schedule: "gradual"  # Dégel progressif
+
+batch_size: 1
+micro_batch_size: 1
+gradient_accumulation_steps: 32  # Effective batch = 32
+max_gradient_accumulation_tokens: 150000
+
+learning_rate: 0.00002  # Très conservateur pour fine-tuning
+min_learning_rate: 0.000002
+weight_decay: 0.01
+max_grad_norm: 0.5  # Plus strict
+num_epochs: 1
+warmup_ratio: 0.3
+
+# Advanced Optimizer
+optimizer: "adamw"
+beta1: 0.9
+beta2: 0.99  # Plus stable
+eps: 0.00000001
+fused_optimizer: true
+weight_decay_schedule: "cosine"
+
+# Sophisticated Scheduler
+scheduler: "cosine_with_restarts"
+cosine_restarts: 2
+eta_min_ratio: 0.1
+warmup_steps: 500
+
+# Training Efficiency (All optimizations)
+mixed_precision: "fp16"
+gradient_checkpointing: true
+selective_checkpointing: true
+use_flash_attention: false
+compile_model: false
+smart_batching: true
+
+# Advanced Data Configuration
+train_data_path: "./data/processed"
+val_data_path: "./data/processed"
+test_data_path: "./data/processed"
+tokenizer_name: "microsoft/DialoGPT-large"
+
+# Advanced Multimodal Strategy
+multimodal_sampling_strategy: "curriculum"  # Progressive difficulty
+text_to_multimodal_ratio: 0.6  # Plus de multimodal
+curriculum_stages: ["text", "text+image", "text+audio", "full_multimodal"]
+max_multimodal_tokens: 2000
+cross_modal_consistency: true
+
+# Data Quality & Augmentation
+data_augmentation:
+  text_augmentation: 
+    enabled: true
+    strategies: ["paraphrase", "back_translation"]
+    prob: 0.1
+  image_augmentation:
+    enabled: true
+    transforms: ["rotation", "brightness", "contrast"]
+    prob: 0.3
+  audio_augmentation:
+    enabled: true
+    transforms: ["noise", "pitch_shift"]
+    prob: 0.2
+
+# Advanced Data Loading
+sequence_bucketing: true
+dynamic_padding: true
+max_tokens_per_batch: 150000
+bucket_boundaries: [1000, 5000, 15000, 50000, 100000]
+dataloader_num_workers: 1
+prefetch_factor: 1
+pin_memory: false
+
+# Sophisticated Checkpointing
+output_dir: "./checkpoints/stage3"
+checkpoint_dir: "./checkpoints/stage3/steps"
+save_strategy: "steps"
+save_steps: 500
+save_total_limit: 5
+load_best_model_at_end: true
+metric_for_best_model: "eval_combined_score"
+
+# Advanced Checkpointing Features
+smart_checkpointing: true
+differential_checkpointing: true
+checkpoint_compression: true
+async_checkpointing: false  # Peut causer problèmes
+
+# Comprehensive Logging
+logging_strategy: "steps"
+logging_steps: 20
+eval_strategy: "steps"
+eval_steps: 250
+eval_delay: 500
+
+# Full Monitoring Suite
+use_wandb: true
+wandb_project: "ultra-ai-stage3"
+wandb_run_name: "full-training"
+wandb_tags: ["stage3", "full-architecture", "final"]
+
+use_tensorboard: true
+tensorboard_log_dir: "./logs/stage3"
+
+# Comprehensive Metrics
+monitor_metrics:
+  - "loss/total"
+  - "loss/text"
+  - "loss/multimodal"
+  - "loss/moe_auxiliary"
+  - "loss/load_balancing"
+  - "loss/contrastive"
+  - "metrics/perplexity"
+  - "metrics/tokens_per_sec"
+  - "multimodal/alignment_score"
+  - "multimodal/fusion_quality"
+  - "moe/expert_utilization"
+  - "moe/load_balance_loss"
+  - "attention/average_attention_entropy"
+  - "hardware/gpu_memory"
+  - "hardware/cpu_memory"
+  - "hardware/gpu_utilization"
+
+# Sophisticated Early Stopping
+early_stopping:
+  enabled: true
+  patience: 7
+  min_delta: 0.001
+  restore_best_weights: true
+  monitor_metric: "eval_combined_score"
+
+# Comprehensive Evaluation
+evaluation:
+  metrics: ["perplexity", "bleu", "rouge", "multimodal_coherence", "expert_efficiency"]
+  generation_samples: 20
+  max_gen_length: 200
+  temperature: 0.8
+  top_p: 0.9
+  num_beams: 3
+  multimodal_eval: true
+  cross_modal_eval: true
+  expert_utilization_eval: true
+
+# Advanced Loss Configuration
+loss_configuration:
+  primary_losses:
+    text_loss: 1.0
+    image_loss: 0.6
+    audio_loss: 0.4
+    video_loss: 0.3
+  auxiliary_losses:
+    moe_auxiliary_loss: 0.15
+    load_balancing_loss: 0.1
+    contrastive_loss: 0.25
+    consistency_loss: 0.1
+  loss_scaling: "adaptive"
+  gradient_penalty: 0.01
+
+# Hardware Optimization (Full)
+hardware:
+  fp16_mixed_precision: true
+  bf16_mixed_precision: false
+  tf32_enabled: true
+  cudnn_benchmark: false
+  cudnn_deterministic: false
+
+# Memory Management (Advanced)
+memory_management:
+  cpu_offload_params: true
+  cpu_offload_optimizer: true
+  gradient_accumulation_cpu_offload: true
+  pin_memory: false
+  empty_cache_steps: 100
+  memory_efficient_attention: true
+  activation_checkpointing_ratio: 0.5
+
+# Model Optimization
+model_optimization:
+  enable_quantization: false  # Après entraînement
+  dynamic_loss_scaling: true
+  gradient_centralization: true
+  lookahead_optimizer: false  # Peut déstabiliser
+
+# Advanced Training Strategies
+training_strategies:
+  curriculum_learning: true
+  progressive_resizing: false
+  mixup: false  # Complex avec multimodal
+  cutmix: false
+  label_smoothing: 0.1
+  dropout_schedule: "linear"
+
+# Quality Assurance
+quality_assurance:
+  gradient_monitoring: true
+  loss_spike_detection: true
+  nan_detection: true
+  model_stability_checks: true
+  automatic_mixed_precision_loss_scaling: true
+
+# Expert System Configuration
+expert_system:
+  expert_specialization_loss: 0.05
+  diversity_penalty: 0.02
+  expert_dropout_schedule: "cosine"
+  load_balancing_temperature: 1.0
+
+# Multimodal Fusion Advanced
+multimodal_fusion_advanced:
+  attention_temperature: 1.0
+  cross_modal_dropout: 0.15
+  modality_specific_norms: true
+  adaptive_fusion_weights: true
+  contrastive_temperature: 0.07
+
+# Resource Monitoring (Production-level)
+resource_monitoring:
+  log_gpu_memory: true
+  log_cpu_memory: true
+  log_disk_usage: true
+  log_network_usage: false
+  profiling_enabled: true
+  alert_thresholds:
+    gpu_memory: 0.95
+    cpu_memory: 0.90
+    disk_usage: 0.85
+  
+# Backup & Recovery
+backup_strategy:
+  enabled: true
+  backup_frequency: 1000  # steps
+  backup_location: "./backups/stage3"
+  max_backups: 3
+  incremental_backups: true
+
+# Post-training Analysis
+post_training_analysis:
+  generate_model_report: true
+  analyze_expert_specialization: true
+  multimodal_alignment_analysis: true
+  attention_pattern_analysis: true
+  performance_bottleneck_analysis: true
+
+# Final Model Export
+model_export:
+  formats: ["pytorch", "onnx"]
+  quantization_ready: true
+  deployment_configs: ["edge", "server"]
+  documentation: true
