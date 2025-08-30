@@ -1,0 +1,92 @@
+# Ultra-AI Tiny Configuration - Modèle ultra-compact
+# Basé sur les paramètres acceptés par UltraAIConfig
+
+# Model architecture
+model_name: "ultra-ai-tiny"
+d_model: 256
+vocab_size: 50432
+max_seq_length: 1024
+
+# Hybrid architecture ratios
+mamba_ratio: 0.70  # 70% Mamba-2
+attention_ratio: 0.20  # 20% Advanced attention
+moe_ratio: 0.08  # 8% MoE
+multimodal_ratio: 0.02  # 2% Multimodal fusion
+
+# Mamba-2 configuration
+mamba_layers: 4
+mamba_d_state: 16
+mamba_d_conv: 4
+mamba_expand: 1
+mamba_dt_rank: "auto"
+
+# Attention configuration (désactivé)
+attention_layers: 0
+attention_heads: 4
+attention_type: "linear"
+
+# MoE configuration (désactivé)
+moe_layers: 0
+num_experts: 4
+moe_top_k: 2
+
+# Multimodal configuration
+modalities: ["text"]
+image_size: 224
+audio_sample_rate: 16000
+
+# Training configuration
+batch_size: 8
+gradient_accumulation_steps: 4
+learning_rate: 0.001
+min_learning_rate: 0.0001
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+# Optimizer configuration
+optimizer: "adamw"
+beta1: 0.9
+beta2: 0.999
+eps: 0.00000001
+
+# Scheduler configuration
+scheduler: "linear"
+warmup_steps: 100
+num_epochs: 1
+
+# Training efficiency
+mixed_precision: true
+gradient_checkpointing: true
+use_flash_attention: true
+compile_model: true
+
+# Data configuration
+train_data_path: "./data/processed"
+val_data_path: "./data/processed"
+tokenizer_name: "microsoft/DialoGPT-large"
+sequence_bucketing: false
+max_tokens_per_batch: 50000
+
+# Checkpointing and logging
+output_dir: "./training_output"
+logging_steps: 50
+eval_steps: 1000
+save_steps: 5000
+max_checkpoints: 2
+
+# Monitoring
+use_wandb: false
+wandb_project: "ultra-ai-tiny"
+monitor_memory: false
+profile_training: false
+
+# Quantization and optimization
+use_quantization: true
+enable_quantization: true
+quantization_method: "qat"
+quantization_bits: 8
+quantization_precision: "int8"
+
+# Edge deployment
+edge_optimization: true
+target_device: "cpu"

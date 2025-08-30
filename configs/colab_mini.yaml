@@ -1,0 +1,190 @@
+# Ultra-AI Google Colab Configuration
+# Optimisé pour GPU T4 (15GB) et contraintes de temps de Colab
+# Modèle mini : ~500M paramètres, 64M actifs
+
+# Model Configuration - Colab Mini Version
+model_name: "ultra-ai-colab-mini"
+model_variant: "ultra-mini"  # Version ultra-compacte
+d_model: 768                 # Dimension réduite
+vocab_size: 50432
+max_seq_length: 8192         # 8K tokens pour commencer (extensible)
+
+# Architecture Distribution - Focus efficacité
+mamba_ratio: 0.85            # Plus de Mamba pour l'efficacité
+attention_ratio: 0.15        # Attention minimale
+moe_ratio: 0.00              # MoE désactivé pour simplicité
+multimodal_ratio: 0.00       # Pas de multimodal
+
+# Mamba-2 Configuration (Ultra-compact)
+mamba_layers: 8              # Seulement 8 couches
+mamba_d_state: 64            # État réduit
+mamba_d_conv: 4
+mamba_expand: 2
+mamba_dt_rank: "auto"
+
+# Attention Configuration (Minimale)
+attention_layers: 2          # Seulement 2 couches attention
+attention_heads: 12          # 12 têtes au lieu de 48
+attention_type: "linear"     # Attention linéaire pour efficacité
+
+# Training Configuration - Colab Optimized
+batch_size: 1                # Batch très petit pour T4
+micro_batch_size: 1
+gradient_accumulation_steps: 64  # Batch effectif = 64
+max_gradient_accumulation_tokens: 200000
+
+learning_rate: 0.0003        # LR plus élevé pour convergence rapide
+min_learning_rate: 0.00003
+weight_decay: 0.01
+max_grad_norm: 1.0
+num_epochs: 2                # Peu d'époques pour Colab
+warmup_ratio: 0.05           # Warmup court
+
+# Optimizer (Memory Ultra-Efficient)
+optimizer: "adamw_8bit"      # Version 8-bit pour économiser mémoire
+beta1: 0.9
+beta2: 0.95
+eps: 0.00000001
+fused_optimizer: true
+use_cpu_adam: false
+
+# Scheduler - Rapide convergence
+scheduler: "cosine"
+warmup_steps: 500            # Warmup très court
+
+# Training Efficiency - Colab Focused
+mixed_precision: "fp16"      # FP16 pour T4
+gradient_checkpointing: true # OBLIGATOIRE pour économiser mémoire
+selective_checkpointing: false
+use_flash_attention: false   # Désactivé pour compatibilité T4
+compile_model: false         # Désactivé pour éviter problèmes
+
+# Memory Management - ULTRA AGGRESSIVE
+cpu_offload_params: true     # Offload paramètres sur CPU
+cpu_offload_optimizer: true  # Offload optimizer sur CPU
+pin_memory: false            # Désactivé pour économiser mémoire
+dataloader_num_workers: 1    # 1 seul worker pour Colab
+prefetch_factor: 1
+
+# Data Configuration - Colab Paths
+train_data_path: "/content/ultra_ai_model/data/processed/text"
+val_data_path: "/content/ultra_ai_model/data/processed/text"
+tokenizer_name: "microsoft/DialoGPT-large"
+
+# Data Loading - Ultra-light
+sequence_bucketing: true
+dynamic_padding: true
+max_tokens_per_batch: 200000
+bucket_boundaries: [512, 1024, 2048, 4096, 8192]
+
+
+# Checkpointing - Colab Drive Integration
+output_dir: "/content/drive/MyDrive/ultra_ai_checkpoints"
+checkpoint_dir: "/content/drive/MyDrive/ultra_ai_checkpoints/steps"
+save_strategy: "steps"
+save_steps: 200              # Sauvegarde fréquente
+save_total_limit: 3          # Max 3 checkpoints
+load_best_model_at_end: true
+
+# Logging & Monitoring - Léger
+logging_strategy: "steps"
+logging_steps: 25            # Log fréquent
+eval_strategy: "steps"
+eval_steps: 100              # Eval fréquente
+eval_delay: 200
+
+# Monitoring Tools - Colab Compatible
+use_wandb: false             # Désactivé par défaut (activer si besoin)
+wandb_project: "ultra-ai-colab"
+wandb_run_name: "colab-mini-training"
+wandb_tags: ["colab", "mini", "test"]
+
+use_tensorboard: false       # Désactivé pour économiser ressources
+tensorboard_log_dir: "/content/drive/MyDrive/ultra_ai_logs"
+
+# Metrics to Track (Essential only)
+monitor_metrics:
+  - "loss/total"
+  - "metrics/tokens_per_sec"
+  - "hardware/gpu_memory"
+
+# Early Stopping - Rapide
+early_stopping:
+  enabled: true
+  patience: 2                # Patience courte
+  min_delta: 0.01
+  restore_best_weights: true
+
+# Validation - Minimal
+evaluation:
+  metrics: ["perplexity"]
+  generation_samples: 3      # Très peu d'échantillons
+  max_gen_length: 50
+  temperature: 0.8
+
+# Hardware Optimization - T4 GPU
+hardware:
+  fp16_mixed_precision: true
+  bf16_mixed_precision: false # T4 ne supporte pas bf16
+  tf32_enabled: false         # T4 ne supporte pas tf32
+  cudnn_benchmark: true
+
+# Memory Management - CRITIQUE pour Colab
+memory_efficient_attention: true
+attention_dropout: 0.1
+hidden_dropout: 0.1
+activation_checkpointing: true
+
+# Distributed - Single GPU
+parallelism_strategy: "none"
+distributed: false
+
+# Security & Stability
+gradient_clipping: true
+max_per_sample_grad_norm: 1.0
+
+# Reproducibility (Optional)
+reproducibility:
+  enabled: false             # Désactivé pour performance
+  seed: 42
+  deterministic: false
+
+# Resource Monitoring - Colab Specific
+resource_monitoring:
+  log_gpu_memory: true
+  log_cpu_memory: false      # Pas critique sur Colab
+  alert_thresholds:
+    gpu_memory: 0.85         # Alerte à 85% pour T4
+
+# Colab Specific Settings
+colab_settings:
+  auto_reconnect: true
+  save_to_drive: true
+  drive_mount_point: "/content/drive"
+  session_timeout_handling: true
+  
+# Data Preprocessing - Light
+text_preprocessing:
+  max_length: 8192
+  min_length: 50
+  remove_duplicates: true
+  quality_filter: false      # Désactivé pour vitesse
+
+# Training Speed Optimizations
+speed_optimizations:
+  cache_dataset: false       # Pas de cache pour économiser mémoire
+  preload_data: false
+  async_data_loading: false
+  
+# Model Size Verification
+expected_memory_usage:
+  model_parameters: "~500M"
+  active_parameters: "~64M" 
+  estimated_gpu_memory: "~8GB"
+  recommended_batch_size: 1
+  
+# Colab Session Management
+session_management:
+  checkpoint_every_n_minutes: 15  # Checkpoint toutes les 15 minutes
+  auto_save_on_disconnect: true
+  resume_training_automatically: true

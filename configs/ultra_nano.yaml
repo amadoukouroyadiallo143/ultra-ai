@@ -1,0 +1,89 @@
+# Ultra-AI Nano - Modèle de démonstration ~1M paramètres
+# Basé sur les paramètres acceptés par UltraAIConfig
+
+# Model architecture
+model_name: "ultra-ai-nano"
+d_model: 128
+vocab_size: 50432
+max_seq_length: 512
+
+# Hybrid architecture ratios
+mamba_ratio: 0.70  # 70% Mamba-2
+attention_ratio: 0.20  # 20% Advanced attention
+moe_ratio: 0.08  # 8% MoE
+multimodal_ratio: 0.02  # 2% Multimodal fusion
+
+# Mamba-2 configuration
+mamba_layers: 2
+mamba_d_state: 8
+mamba_d_conv: 4
+mamba_expand: 1
+mamba_dt_rank: "auto"
+
+# Attention configuration (désactivé)
+attention_layers: 0
+attention_heads: 2
+attention_type: "linear"
+
+# MoE configuration (désactivé)
+moe_layers: 0
+num_experts: 2
+moe_top_k: 1
+
+# Multimodal configuration
+modalities: ["text"]
+
+# Training configuration
+batch_size: 16
+gradient_accumulation_steps: 2
+learning_rate: 0.002
+min_learning_rate: 0.0002
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+# Optimizer configuration
+optimizer: "adamw"
+beta1: 0.9
+beta2: 0.999
+eps: 0.00000001
+
+# Scheduler configuration
+scheduler: "linear"
+warmup_steps: 50
+num_epochs: 1
+
+# Training efficiency
+mixed_precision: true
+gradient_checkpointing: true
+use_flash_attention: true
+compile_model: true
+
+# Data configuration
+train_data_path: "./data/processed"
+val_data_path: "./data/processed" 
+tokenizer_name: "microsoft/DialoGPT-large"
+sequence_bucketing: false
+max_tokens_per_batch: 25000
+
+# Checkpointing and logging
+output_dir: "./training_output"
+logging_steps: 25
+eval_steps: 500
+save_steps: 1000
+max_checkpoints: 1
+
+# Monitoring
+use_wandb: false
+monitor_memory: false
+profile_training: false
+
+# Quantization and optimization
+use_quantization: true
+enable_quantization: true
+quantization_method: "qat"
+quantization_bits: 8
+quantization_precision: "int8"
+
+# Edge deployment
+edge_optimization: true
+target_device: "cpu"
